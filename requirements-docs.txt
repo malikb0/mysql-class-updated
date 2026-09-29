@@ -1,0 +1,3 @@
+# Optional docs-site dependencies (only needed for `make docs`).
+mkdocs-material>=9.5
+pymdown-extensions>=10.7

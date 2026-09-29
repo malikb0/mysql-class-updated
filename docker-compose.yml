@@ -1,0 +1,30 @@
+name: shopdb
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: shopdb-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-shopdb}
+      MYSQL_USER: ${MYSQL_USER:-shop}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-shop}
+    ports:
+      - "${MYSQL_PORT:-3310}:3306"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      # The app user (shop) is not SUPER. Creating a stored function while binary
+      # logging is on requires this flag; safe for a local learning database.
+      - --log-bin-trust-function-creators=1
+    volumes:
+      - shopdb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  shopdb-data:

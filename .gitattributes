@@ -1,0 +1,19 @@
+# Normalise all text to LF; keep binaries binary.
+* text=auto eol=lf
+
+*.sql text eol=lf
+*.md  text eol=lf
+*.sh  text eol=lf
+*.py  text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+
+*.mwb binary
+*.png binary
+*.jpg binary
+*.gif binary
+*.zip binary
+*.sql.gz binary
+*.dump binary

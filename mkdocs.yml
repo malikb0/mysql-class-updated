@@ -1,0 +1,35 @@
+# Optional MkDocs Material site. Build with `make docs` (or `python -m mkdocs build`).
+site_name: MySQL Course
+site_description: Hands-on MySQL — from first query to production habits
+
+nav:
+  - Home: README.md
+  - Getting started: docs/GETTING_STARTED.md
+  - Syllabus: SYLLABUS.md
+  - Learning path: LEARNING_PATH.md
+  - Modules: modules/README.md
+  - Reference:
+      - Structure: docs/STRUCTURE.md
+      - File catalog: docs/FILE_CATALOG.md
+      - Datasets: docs/DATASETS.md
+      - Glossary: docs/GLOSSARY.md
+      - Study guide: docs/STUDY_GUIDE.md
+  - Legacy transcripts: docs/reference/legacy/README.md
+  - Notice: NOTICE.md
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables

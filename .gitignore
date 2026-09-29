@@ -1,0 +1,41 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python (module 18 + tooling)
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Fetched / third-party datasets (see data/fetch/)
+data/sakila/
+data/employees/
+sakila-db/
+test_db/
+*.dump
+*.sql.gz
+
+# Generated / build
+build/
+dist/
+*.log
+
+# Orchestrator reports are regenerated per run
+.orchestrator/reports/*
+!.orchestrator/reports/.gitkeep
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.bak
+
+# Planning skeleton (kept on disk, not published)
+.orchestrator/
+site/
+
+.nbtool/

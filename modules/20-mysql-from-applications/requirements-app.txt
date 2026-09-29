@@ -1,0 +1,8 @@
+# Module 20 — run the example application against the course database.
+#
+#   python3 -m pip install -r modules/20-mysql-from-applications/requirements-app.txt
+#   python3 modules/20-mysql-from-applications/app/query_shop.py
+#
+# SQLAlchemy is the toolkit; PyMySQL is the driver that speaks to MySQL.
+sqlalchemy>=2.0
+pymysql>=1.1
